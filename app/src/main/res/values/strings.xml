@@ -7,4 +7,7 @@
     <string name="CharacterGender">Género</string>
     <string name="CharacterDescription">Descripción</string>
     <string name="CharacterAffiliation">Afiliación</string>
+    <string name="PlanetName">Nombre</string>
+    <string name="PlanetStatus">Estado\n</string>
+    <string name="PlanetDescription">Descripción</string>
 </resources>

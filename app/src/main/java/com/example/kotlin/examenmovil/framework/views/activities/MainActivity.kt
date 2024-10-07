@@ -18,6 +18,7 @@ import com.example.kotlin.examenmovil.framework.adapters.CharacterAdapter
 import com.example.kotlin.examenmovil.framework.viewmodel.CharacterViewModel
 import com.example.kotlin.examenmovil.framework.viewmodel.MainViewModel
 import com.example.kotlin.examenmovil.framework.views.fragments.CharacterFragment
+import com.example.kotlin.examenmovil.framework.views.fragments.PlanetsFragment
 import com.example.kotlin.examenmovil.utils.Constants
 
 class MainActivity : AppCompatActivity() {
@@ -74,7 +75,7 @@ class MainActivity : AppCompatActivity() {
 
         when(menuOption){
             Constants.MENU_CHARACTER -> exchangeCurrentFragment(CharacterFragment(),Constants.MENU_CHARACTER)
-            //Constants.MENU_PLANETS -> exchangeCurrentFragment(PlanetFragment(),Constants.MENU_SEARCH)
+            Constants.MENU_PLANETS -> exchangeCurrentFragment(PlanetsFragment(),Constants.MENU_PLANETS)
         }
     }
 }

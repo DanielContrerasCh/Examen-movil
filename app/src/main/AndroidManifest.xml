@@ -22,6 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".framework.views.activities.PlanetDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ExamenMovil"
+            android:screenOrientation="portrait"
+            />
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.example.kotlin.examenmovil.framework.views.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -40,6 +41,21 @@ class CharacterFragment : Fragment() {
         initializeObservers()
         viewModel.getCharacterList()
 
+        // Abrir diálogo de selección de raza
+        binding.btnFilterRace.setOnClickListener {
+            showRaceFilterDialog()
+        }
+
+        // Abrir diálogo de selección de afiliación
+        binding.btnFilterAffiliation.setOnClickListener {
+            showAffiliationFilterDialog()
+        }
+
+        // Restablecer filtros
+        binding.btnResetFilters.setOnClickListener {
+            viewModel.resetFilters()
+        }
+
         return root
     }
 
@@ -69,5 +85,40 @@ class CharacterFragment : Fragment() {
         recyclerView.layoutManager = gridLayoutManager
         adapter.CharacterAdapter(dataForList,requireContext())
         recyclerView.adapter = adapter
+    }
+
+    private fun showRaceFilterDialog() {
+        val races = arrayOf("Saiyan", "Namekian", "Human", "Android", "Frieza Race") // Lista de razas
+        var selectedRace = ""
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Selecciona una raza")
+        builder.setSingleChoiceItems(races, -1) { _, which ->
+            selectedRace = races[which]
+        }
+        builder.setPositiveButton("Filtrar") { _, _ ->
+            viewModel.filterByRaces(listOf(selectedRace)) // Filtra por la raza seleccionada
+        }
+        builder.setNegativeButton("Cancelar", null)
+        builder.show()
+    }
+
+    private fun showAffiliationFilterDialog() {
+        val affiliations = arrayOf("Z Fighter",
+            "Army of Frieza",
+            "Freelancer",
+            "Villain",
+            "Other",
+            "Pride Troopers") // Lista de afiliaciones
+        var selectedAffiliation = ""
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Selecciona una afiliación")
+        builder.setSingleChoiceItems(affiliations, -1) { _, which ->
+            selectedAffiliation = affiliations[which]
+        }
+        builder.setPositiveButton("Filtrar") { _, _ ->
+            viewModel.filterByAffiliations(listOf(selectedAffiliation)) // Filtra por la afiliación seleccionada
+        }
+        builder.setNegativeButton("Cancelar", null)
+        builder.show()
     }
 }

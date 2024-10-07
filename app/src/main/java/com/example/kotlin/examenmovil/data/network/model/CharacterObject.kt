@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName
 
 data class CharacterObject(
     @SerializedName("items") val items: ArrayList<CharacterBase>,  // Cambié a List para que se adapte al JSON
-    @SerializedName("meta") val meta: MetaData,
-    @SerializedName("links") val links: LinksData
+//    @SerializedName("meta") val meta: MetaData,
+//    @SerializedName("links") val links: LinksData
 )
 
-data class MetaData(
+/*data class MetaData(
     @SerializedName("totalItems") val totalItems: Int,
     @SerializedName("itemCount") val itemCount: Int,
     @SerializedName("itemsPerPage") val itemsPerPage: Int,
@@ -21,4 +21,4 @@ data class LinksData(
     @SerializedName("previous") val previous: String?,
     @SerializedName("next") val next: String?,
     @SerializedName("last") val last: String
-)
+)*/
