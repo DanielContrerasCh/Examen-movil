@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Examen movil</string>
+    <string name="CharacterName">Nombre</string>
+    <string name="CharacterKi">Ki</string>
+    <string name="CharacterMaxKi">KiMaximo</string>
+    <string name="CharacterRace">Raza</string>
+    <string name="CharacterGender">Género</string>
+    <string name="CharacterDescription">Descripción</string>
+    <string name="CharacterAffiliation">Afiliación</string>
 </resources>

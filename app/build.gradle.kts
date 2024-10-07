@@ -71,5 +71,9 @@ dependencies {
     implementation ("androidx.navigation:navigation-fragment-ktx:2.5.3")
     // OkHttp
     implementation ("com.squareup.okhttp3:okhttp:4.10.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
+
+    // View Model
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
 
 }
